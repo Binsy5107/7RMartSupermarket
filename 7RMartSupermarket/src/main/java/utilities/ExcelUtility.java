@@ -1,4 +1,4 @@
-package SupermarketUtilities;
+package utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,12 +8,14 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class SupermarketExcelUtility {
+import constants.constant;
+
+public class ExcelUtility {
 	public static XSSFWorkbook w;
 	public static XSSFSheet s;
 	public static FileInputStream f;
 	public static String getStringData(int i,int j,String Sheet) throws IOException {
-	f= new FileInputStream("C:\\Users\\Bincy\\git\\seleniumautomation\\AutomtionCourse\\src\\test\\resources\\Supermarketlogintestdata.xlsx");
+	f= new FileInputStream("C:\\Users\\Bincy\\git\\7RMartSupermarket\\7RMartSupermarket\\src\\test\\resources\\Testdata.xlsx");
 w= new XSSFWorkbook(f);
 s= w.getSheet(Sheet);
 Row r=s.getRow(i);
@@ -21,7 +23,7 @@ Cell c=r.getCell(j);
 return c.getStringCellValue();
 	}
 	public static String getIntegerData(int i,int j,String Sheet) throws IOException {
-		f= new FileInputStream("C:\\Users\\Bincy\\git\\seleniumautomation\\AutomtionCourse\\src\\test\\resources\\Supermarketlogintestdata.xlsx");
+		f= new FileInputStream("C:\\Users\\Bincy\\git\\7RMartSupermarket\\7RMartSupermarket\\src\\test\\resources\\Testdata.xlsx");
 		w= new XSSFWorkbook(f);
 		s= w.getSheet(Sheet);
 		Row r=s.getRow(i);
