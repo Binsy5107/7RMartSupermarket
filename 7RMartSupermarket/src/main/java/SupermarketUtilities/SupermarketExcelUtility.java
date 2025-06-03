@@ -1,0 +1,34 @@
+package SupermarketUtilities;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class SupermarketExcelUtility {
+	public static XSSFWorkbook w;
+	public static XSSFSheet s;
+	public static FileInputStream f;
+	public static String getStringData(int i,int j,String Sheet) throws IOException {
+	f= new FileInputStream("C:\\Users\\Bincy\\git\\seleniumautomation\\AutomtionCourse\\src\\test\\resources\\Supermarketlogintestdata.xlsx");
+w= new XSSFWorkbook(f);
+s= w.getSheet(Sheet);
+Row r=s.getRow(i);
+Cell c=r.getCell(j);
+return c.getStringCellValue();
+	}
+	public static String getIntegerData(int i,int j,String Sheet) throws IOException {
+		f= new FileInputStream("C:\\Users\\Bincy\\git\\seleniumautomation\\AutomtionCourse\\src\\test\\resources\\Supermarketlogintestdata.xlsx");
+		w= new XSSFWorkbook(f);
+		s= w.getSheet(Sheet);
+		Row r=s.getRow(i);
+		Cell c=r.getCell(j);
+		int value=(int) c.getNumericCellValue();
+		return String.valueOf(value);
+
+		}
+
+}
