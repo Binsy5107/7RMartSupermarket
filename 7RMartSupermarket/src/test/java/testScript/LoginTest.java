@@ -1,7 +1,10 @@
 package testScript;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
@@ -14,12 +17,18 @@ public class LoginTest extends Base {
 	public void veriyUserLoginWithValidCredentials() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "Loginpages");
-		String password=ExcelUtility.getStringData(0, 0, "Loginpages");
+		String password=ExcelUtility.getStringData(0, 1, "Loginpages");
 		LoginPages loginpage=new LoginPages(driver);
 		loginpage.enterusernameonusernamefield(username);
 		loginpage.enterpasswordonpasswordfield(password);
 		loginpage.clicksubmitbutton();
-		
+		//boolean isDashboardDisplayed = signinPage.dashboardDisplayed();
+		//Assert.assertTrue(isDashboardDisplayed,"User was unable to login with valid credentials");
+		//boolean isDashboarddisplayed=loginpage.dashboardDispalyed();
+		//Assert.assertFalse(isDashboarddisplayed, "user was unable to login with credentials");
+				String actual = loginpage.dashboardDispalyed();
+				String expected = "Dashboard";
+				Assert.assertEquals(actual, expected,"User was unable to login with valid credentials");
 		
 	}
 	
@@ -34,6 +43,8 @@ public class LoginTest extends Base {
 		loginpage.enterusernameonusernamefield(username);
 		loginpage.enterpasswordonpasswordfield(password);
 		loginpage.clicksubmitbutton();
+		
+		
 	}
 	
 	@Test
@@ -57,5 +68,6 @@ public class LoginTest extends Base {
 		loginpage.enterpasswordonpasswordfield(password);
 		loginpage.clicksubmitbutton();
 	}
+	
 	
 }
