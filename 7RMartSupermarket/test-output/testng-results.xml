@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-09T21:55:14 IST" name="Default suite" finished-at="2025-06-09T21:55:36 IST" duration-ms="22867">
+  <suite started-at="2025-06-09T22:29:38 IST" name="Default suite" finished-at="2025-06-09T22:30:01 IST" duration-ms="23348">
     <groups>
     </groups>
-    <test started-at="2025-06-09T21:55:14 IST" name="Default test" finished-at="2025-06-09T21:55:36 IST" duration-ms="22867">
+    <test started-at="2025-06-09T22:29:38 IST" name="Default test" finished-at="2025-06-09T22:30:01 IST" duration-ms="23348">
       <class name="testScript.CategoryTest">
-        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:14 IST" name="intializeBrowser" finished-at="2025-06-09T21:55:31 IST" duration-ms="17588" status="PASS">
+        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T22:29:38 IST" name="intializeBrowser" finished-at="2025-06-09T22:29:56 IST" duration-ms="18501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializeBrowser -->
-        <test-method signature="verifyabletocreatenewcategory()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:31 IST" name="verifyabletocreatenewcategory" finished-at="2025-06-09T21:55:36 IST" duration-ms="5221" status="PASS">
+        <test-method signature="verifyabletocreatenewcategory()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T22:29:56 IST" name="verifyabletocreatenewcategory" finished-at="2025-06-09T22:30:01 IST" duration-ms="4775" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyabletocreatenewcategory -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:36 IST" name="closeBrowser" finished-at="2025-06-09T21:55:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T22:30:01 IST" name="closeBrowser" finished-at="2025-06-09T22:30:01 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

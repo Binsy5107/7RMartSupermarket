@@ -66,7 +66,7 @@ public class ManagenewsTest extends Base{
 		managenews.clickmanagenews();
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement newbutton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn.btn-rounded.btn-danger")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Manage News')]")));
 	    
 	    String actual = managenews.getManageNewsHeaderText();
 	    String expected = "Manage News";
