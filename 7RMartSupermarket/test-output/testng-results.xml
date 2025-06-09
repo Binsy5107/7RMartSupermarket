@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-04T21:36:37 IST" name="Default suite" finished-at="2025-06-04T21:36:58 IST" duration-ms="20871">
+  <suite started-at="2025-06-09T21:55:14 IST" name="Default suite" finished-at="2025-06-09T21:55:36 IST" duration-ms="22867">
     <groups>
     </groups>
-    <test started-at="2025-06-04T21:36:37 IST" name="Default test" finished-at="2025-06-04T21:36:58 IST" duration-ms="20871">
-      <class name="testScript.HomeTest">
-        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testScript.HomeTest@233795b6]" started-at="2025-06-04T21:36:37 IST" name="intializeBrowser" finished-at="2025-06-04T21:36:56 IST" duration-ms="18935" status="PASS">
+    <test started-at="2025-06-09T21:55:14 IST" name="Default test" finished-at="2025-06-09T21:55:36 IST" duration-ms="22867">
+      <class name="testScript.CategoryTest">
+        <test-method is-config="true" signature="intializeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:14 IST" name="intializeBrowser" finished-at="2025-06-09T21:55:31 IST" duration-ms="17588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializeBrowser -->
-        <test-method signature="veriyUserLoginandlogout()[pri:0, instance:testScript.HomeTest@233795b6]" started-at="2025-06-04T21:36:56 IST" name="veriyUserLoginandlogout" finished-at="2025-06-04T21:36:58 IST" duration-ms="1886" status="PASS">
+        <test-method signature="verifyabletocreatenewcategory()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:31 IST" name="verifyabletocreatenewcategory" finished-at="2025-06-09T21:55:36 IST" duration-ms="5221" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- veriyUserLoginandlogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.HomeTest@233795b6]" started-at="2025-06-04T21:36:58 IST" name="closeBrowser" finished-at="2025-06-04T21:36:58 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- verifyabletocreatenewcategory -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScript.CategoryTest@233795b6]" started-at="2025-06-09T21:55:36 IST" name="closeBrowser" finished-at="2025-06-09T21:55:36 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScript.HomeTest -->
+      </class> <!-- testScript.CategoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
