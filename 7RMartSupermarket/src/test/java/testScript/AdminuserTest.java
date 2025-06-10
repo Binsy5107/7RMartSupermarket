@@ -11,9 +11,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import listeners.listener;
 import pages.AdminuserPages;
 import pages.LoginPages;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AdminuserTest extends Base{
 	
@@ -42,10 +44,14 @@ public class AdminuserTest extends Base{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
 		
+		RandomDataUtility random=new RandomDataUtility();//fake data
+		String usernameadmin=random.createRandomUsername();
+		adminuser.enterUsernameAdminUser(usernameadmin);
+		String passwordadmin=random.createRandomPassword();
+		adminuser.enterPasswordAdminUser(passwordadmin);
 		
-		
-		adminuser.enterUsernameAdminUser("admin123User");
-		adminuser.enterPasswordAdminUser("admin123@User");
+		//adminuser.enterUsernameAdminUser("admin123User");
+		//adminuser.enterPasswordAdminUser("admin123@User");
 		adminuser.selectUserTypeAdminUser("Admin");
 		adminuser.clickSaveButton();
 		

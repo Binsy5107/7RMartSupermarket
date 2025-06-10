@@ -52,6 +52,8 @@ public class AdminuserPages {
 	{
 	    usernameadminuser.sendKeys(username);
 	}
+	
+	
 	public void enterPasswordAdminUser(String password) {
 	    passwordadminuser.sendKeys(password);
 	}
