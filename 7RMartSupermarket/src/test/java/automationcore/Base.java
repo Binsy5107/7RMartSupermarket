@@ -28,15 +28,15 @@ public class Base {
 	{
 		//driver.quit();
 	}
-	//public void driverQuit(ITestResult iTestResult) throws IOException
-	//{
-	//if(iTestResult.getStatus()==ITestResult.FAILURE)//iTestResult--interface
-	//{
-	//ScreenShotUtility screenShot=new ScreenShotUtility();
-	//screenShot.getScreenshot(driver, iTestResult.getName());
-	//}
-	//driver.quit();
+	public void driverQuit(ITestResult iTestResult) throws IOException
+	{
+	if(iTestResult.getStatus()==ITestResult.FAILURE)//iTestResult--interface
+	{
+	ScreenShotUtility screenShot=new ScreenShotUtility();
+	screenShot.getScreenshot(driver, iTestResult.getName());
+	}
+	driver.quit();
 
-	//}
+	}
 
 }

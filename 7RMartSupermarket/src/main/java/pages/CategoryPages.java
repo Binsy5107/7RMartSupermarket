@@ -1,10 +1,14 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CategoryPages {
 	public WebDriver driver;
@@ -55,13 +59,11 @@ public class CategoryPages {
 	public void clicksaveButton()
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollIntoView(true);", saveButton);
-	    
-	    try {
-	        Thread.sleep(500);
-	    } catch (InterruptedException e) {
-	        e.printStackTrace();
-	    }
+	   // js.executeScript("arguments[0].scrollIntoView(true);", saveButton);
+	    js.executeScript("arguments[0].click();", saveButton);
+	   
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    wait.until(ExpectedConditions.elementToBeClickable(saveButton));
 
 	    saveButton.click();
 	}

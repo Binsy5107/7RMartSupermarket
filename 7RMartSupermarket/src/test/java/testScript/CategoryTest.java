@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -43,6 +44,12 @@ public class CategoryTest extends Base{
 		category.clickselectgroups();
 		category.uploadMainImage("C:\\Users\\Bincy\\Downloads\\1filr9D-pokemon-wallpapers (1).jpg");
 		category.clicksaveButton();
+		
+		WebElement successMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[i[contains(@class, 'fa-check')]]")));
+		String actualMessage = successMsg.getText();
+		String expectedMessage = "News created successfully";
+		System.out.println("Success Message: " + actualMessage);
+		Assert.assertEquals(actualMessage, expectedMessage, "News creation message mismatch!");
 		
 	}
 
