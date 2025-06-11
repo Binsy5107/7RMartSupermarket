@@ -20,10 +20,10 @@ import utilities.RandomDataUtility;
 public class AdminuserTest extends Base{
 	
 	
-	@Test
+	@Test(description="adding new user to user list",retryAnalyzer=retry.Retry.class)
 	public void verifyabletocraetenewadminuser() throws IOException
 	{
-		String username=ExcelUtility.getStringData(0, 0, "Loginpages");
+		String username=ExcelUtility.getStringData(0, 0, "Loginpages");// for retry edit the code to fail
 		String password=ExcelUtility.getStringData(0, 1, "Loginpages");
 		LoginPages loginpage=new LoginPages(driver);
 		loginpage.enterusernameonusernamefield(username);

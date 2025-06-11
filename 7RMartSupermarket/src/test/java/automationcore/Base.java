@@ -5,9 +5,12 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import utilities.ScreenShotUtility;
 
@@ -15,9 +18,24 @@ public class Base {
 	
 	public static WebDriver driver;
 	@BeforeMethod
-	public void intializeBrowser()
+	@Parameters("browsers")
+	public void intializeBrowser(String browsers) throws Exception
 	{
-		 driver=new ChromeDriver();
+		if(browsers.equalsIgnoreCase("chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+		if(browsers.equalsIgnoreCase("edge"))
+		{
+			driver=new EdgeDriver();
+		}
+		if (browsers.equalsIgnoreCase("firefox"))
+		{
+			driver=new FirefoxDriver();
+		}
+		else 
+			throw new Exception("invalid browser");
+		 
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//implicit wait--Duration is a class
