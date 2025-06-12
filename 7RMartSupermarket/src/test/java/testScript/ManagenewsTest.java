@@ -17,7 +17,7 @@ import utilities.ExcelUtility;
 
 public class ManagenewsTest extends Base{
 	
-	@Test
+	@Test(description = "adding new manage news to the list")
 	public void veriyabletocreatemangenews() throws IOException 
 	{
 		String username=ExcelUtility.getStringData(0, 0, "Loginpages");
@@ -52,7 +52,7 @@ public class ManagenewsTest extends Base{
 		
 		
 	}
-	@Test
+	@Test(description = "searching  added new manage news in the list")
 	public void verifythenewnews() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "Loginpages");

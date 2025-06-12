@@ -18,7 +18,7 @@ import utilities.ExcelUtility;
 
 public class CategoryTest extends Base{
 	
-	@Test
+	@Test(description = "adding new category to catgory list")
 	public void verifyabletocreatenewcategory() throws IOException, AWTException 
 	{
 		String username=ExcelUtility.getStringData(0, 0, "Loginpages");

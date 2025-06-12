@@ -66,7 +66,7 @@ public class AdminuserTest extends Base{
 		 
 	}
 	
-	@Test
+	@Test(description = "searching added new user in the list")
 	public void verifythenewadminuser() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "Loginpages");
