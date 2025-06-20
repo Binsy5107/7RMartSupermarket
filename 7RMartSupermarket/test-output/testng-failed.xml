@@ -11,7 +11,7 @@
         <methods>
           <include name="closeBrowser"/>
           <include name="intializeBrowser"/>
-          <include name="verifyuserloginwithinvalidcredential" invocation-numbers="1"/>
+          <include name="verifyuserloginwithinvalidcredential" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- testScript.LoginTest -->
     </classes>

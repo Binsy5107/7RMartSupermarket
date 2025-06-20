@@ -47,7 +47,12 @@ public class LoginPages {
 }
 	public String signInPageDisplayed() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement freshButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
-	    return freshButton.getText();
+	    
+	    // Wait until the login button is visible again after a failed login
+	    By signInLocator = By.xpath("//button[@type='submit']");
+	    WebElement signInButton = wait.until(ExpectedConditions.visibilityOfElementLocated(signInLocator));
+	    
+	    return signInButton.getText(); // Should be "Sign In"
+	    
 	}
 }
