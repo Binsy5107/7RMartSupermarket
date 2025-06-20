@@ -1,7 +1,9 @@
 package automationcore;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,9 +17,11 @@ import org.testng.annotations.Parameters;
 import utilities.ScreenShotUtility;
 
 public class Base {
-	
+	Properties prop;
+	FileInputStream file;
 	public static WebDriver driver;
-	@BeforeMethod
+
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browsers")
 	public void intializeBrowser(String browsers) throws Exception
 	{
@@ -25,11 +29,11 @@ public class Base {
 		{
 			driver=new ChromeDriver();
 		}
-		if(browsers.equalsIgnoreCase("edge"))
+		else if(browsers.equalsIgnoreCase("edge"))
 		{
 			driver=new EdgeDriver();
 		}
-		if (browsers.equalsIgnoreCase("firefox"))
+		else if (browsers.equalsIgnoreCase("firefox"))
 		{
 			driver=new FirefoxDriver();
 		}
@@ -41,10 +45,10 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//implicit wait--Duration is a class
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 	public void driverQuit(ITestResult iTestResult) throws IOException
 	{

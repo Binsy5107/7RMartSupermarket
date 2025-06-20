@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import constants.constant;
+
 public class CategoryPages {
 	public WebDriver driver;
 	public CategoryPages(WebDriver driver) 
@@ -27,45 +29,58 @@ public class CategoryPages {
 	@FindBy(css = "input#main_img")private WebElement uploadMainImage;
 	@FindBy(xpath = "//button[@class='btn btn-danger']")private WebElement saveButton;
 	
-
-	
-	
-	public void clickmoreInfoLink()
+		
+	public CategoryPages clickmoreInfoLink()
 	{
 		moreInfoLink.click();
+		return this;
 	}
 	
 	public String getCategoryHeaderText() {
 	    return listCategoriesHeader.getText();
 	}
-	public void clicknewCategoryButton()
+	public CategoryPages clicknewCategoryButton()
 	{
 		newCategoryButton.click();
+		return this;
 	}
-	public void entercategoryInputField(String categoryname)
+	public CategoryPages entercategoryInputField()
 	{
-		categoryInputField.sendKeys(categoryname);
+		categoryInputField.sendKeys(constant.NEWCATEGORYNAME);
+		return this;
 	}
 	
-	public void clickselectgroups()
+	public CategoryPages clickselectgroups()
 	{
 		selectgroups.click();
+		return this;
 	}
-	public void uploadMainImage(String filePath) 
+	public CategoryPages uploadMainImage() 
 	{
-		uploadMainImage.sendKeys(filePath);
+		uploadMainImage.sendKeys(constant.TESTIMAGEFILE);
+		return this;
 	}
 	
 	public void clicksaveButton()
 	{
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-	   // js.executeScript("arguments[0].scrollIntoView(true);", saveButton);
-	    js.executeScript("arguments[0].click();", saveButton);
-	   
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Wait until the button is visible and enabled
 	    wait.until(ExpectedConditions.elementToBeClickable(saveButton));
 
-	    saveButton.click();
+	    // Scroll to the button
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView(true);", saveButton);
+
+	    // Click using JavaScript to avoid interception
+	    js.executeScript("arguments[0].click();", saveButton);
+
 	}
+
+	
+		
+		
+	
+
 
 }

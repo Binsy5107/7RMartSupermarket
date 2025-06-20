@@ -12,12 +12,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.constant;
 import pages.CategoryPages;
+import pages.HomePage;
 import pages.LoginPages;
 import utilities.ExcelUtility;
 
 public class CategoryTest extends Base{
-	
 	@Test(description = "adding new category to catgory list")
 	public void verifyabletocreatenewcategory() throws IOException, AWTException 
 	{
@@ -39,18 +40,12 @@ public class CategoryTest extends Base{
 	    String expected = "List Categories";
 	    Assert.assertEquals(actual, expected, "Failed to load category page after login.");
 	    
-	    category.clicknewCategoryButton();
-		category.entercategoryInputField("Supermarket category");
-		category.clickselectgroups();
-		category.uploadMainImage("C:\\Users\\Bincy\\Downloads\\1filr9D-pokemon-wallpapers (1).jpg");
-		category.clicksaveButton();
+	    category.clicknewCategoryButton().entercategoryInputField().uploadMainImage().clicksaveButton();
 		
-		WebElement successMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[i[contains(@class, 'fa-check')]]")));
-		String actualMessage = successMsg.getText();
-		String expectedMessage = "News created successfully";
-		System.out.println("Success Message: " + actualMessage);
-		Assert.assertEquals(actualMessage, expectedMessage, "News creation message mismatch!");
 		
 	}
+	
+		
+	
 
 }

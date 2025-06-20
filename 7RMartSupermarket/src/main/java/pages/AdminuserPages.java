@@ -1,3 +1,4 @@
+
 package pages;
 
 import org.openqa.selenium.WebDriver;
@@ -5,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import constants.constant;
+import utilities.PageUtility;
 
 public class AdminuserPages {
 	
@@ -35,57 +39,70 @@ public class AdminuserPages {
 
 	
 	
-	public void clickadminuserbutton()
+	public AdminuserPages clickadminuserbutton()
 	{
 		adminuser.click();
+		return this;
 	}
 	public String adminuserheadertext()
 	{
 		return adminuserheader.getText();
 	}
-	public void clicknewbutton() 
+	public AdminuserPages clicknewbutton() 
 	{
 		newbutton.click();
+		return this;
 	}
 	
-	public void enterUsernameAdminUser(String username) 
+	public AdminuserPages enterUsernameAdminUser(String username) 
 	{
 	    usernameadminuser.sendKeys(username);
+	    return this;
 	}
 	
 	
-	public void enterPasswordAdminUser(String password) {
+	public AdminuserPages enterPasswordAdminUser(String password) {
 	    passwordadminuser.sendKeys(password);
+	    return this;
 	}
 
-	public void selectUserTypeAdminUser(String usertype) 
+	public AdminuserPages selectUserTypeAdminUser() 
 	{
-		Select dropdown=new Select(userTypeDropdown);
-	   dropdown.selectByVisibleText(usertype);
+		PageUtility page=new PageUtility();
+		page.selectDropdownWithVisibleText(userTypeDropdown,constant.USERTYPE);
+		//Select dropdown=new Select(userTypeDropdown);
+	   //dropdown.selectByVisibleText(usertype);
+		return this;
 	}
-	public void clickSaveButton() {
+	public AdminuserPages clickSaveButton() {
 	    saveButton.click();
+	    return this;
 	}
 	
-	public void  clicksearchButton() {
+	public AdminuserPages  clicksearchButton() {
 		searchButton.click();
+		return this;
 		
 	}
-	public void entersearchusername(String username)
+	public AdminuserPages entersearchusername()
 	{
-		searchusername.sendKeys(username);
+		searchusername.sendKeys(constant.SEARCHADMINUSERNAME);
+		return this;
 	}
 	
-	public void selectusertypedropdown(String usertype)
+	public AdminuserPages selectusertypedropdown()
 	{
-		Select dropdown=new Select(searchuserTypeDropdown);
-		   dropdown.selectByVisibleText(usertype);
+		PageUtility page= new PageUtility();
+		page.selectDropdownWithVisibleText(searchuserTypeDropdown, constant.USERTYPE);
+		//Select dropdown=new Select(searchuserTypeDropdown);
+		  // dropdown.selectByVisibleText(usertype);
+		return this;
 	}
 	
-	public void clicksearchbuttoninsearchadminuser()
+	public AdminuserPages clicksearchbuttoninsearchadminuser()
 	{
 		searchbuttoninsearchadminuser.click();
+		return this;
 	}
-	
 	
 }

@@ -1,3 +1,4 @@
+
 package pages;
 
 import org.openqa.selenium.WebDriver;
@@ -21,23 +22,28 @@ public class LoginPages {
 	
 	
 	
-	public void enterusernameonusernamefield(String username)
+	public LoginPages enterusernameonusernamefield(String username)
 	{
 		usernamefield.sendKeys(username);
+		return this;
 	}
-	public void enterpasswordonpasswordfield(String password)
+	public LoginPages enterpasswordonpasswordfield(String password)
 	{
 		passwordfield.sendKeys(password);
+		return this;
 	}
-	public void clicksubmitbutton()
+	public HomePage clicksubmitbutton()
 	{
 		submitbutton.click();
+		return new HomePage(driver);
 	}
-	
-public String dashboardDispalyed()
-{
+	public String dashboardDispalyed()
+	{
 	//return Dashboard.isDisplayed();
 	return dashboard.getText();
 }
+	public String signInPageDisplayed() {
+		return submitbutton.getText();
+	}
 
 }

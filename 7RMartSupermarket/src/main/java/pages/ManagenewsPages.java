@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ManagenewsPages {
+import constants.constant;
+
+public class ManagenewsPages   {
 	public WebDriver driver;
 	public ManagenewsPages(WebDriver driver) 
 	{
@@ -28,37 +30,44 @@ public class ManagenewsPages {
 	
 	
 	
-	public void clickmanagenews() 
+	public ManagenewsPages clickmanagenews() 
 	{
 		managenews.click();
+		return this;
 	}
 	
 	public String getManageNewsHeaderText() {
 	    return manageNewsHeader.getText();
 	}
-	public void clicknewbutton()
+	public ManagenewsPages clicknewbutton()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void enternewtextarea()
+	public ManagenewsPages enternewtextarea()
 	{
-		newsTextArea.sendKeys("supermarket news");
+		newsTextArea.sendKeys(constant.NEWSTOADD);
+		return this;
 	}
-	public void clicksavebutton()
+	public ManagenewsPages clicksavebutton()
 	{
 		savebutton.click();
+		return this;
 	}
-	public void clicksearchbutton()
+	public ManagenewsPages clicksearchbutton()
 	{
 		searchbutton.click();
+		return this;
 	}
-	public void entersearchtextarea()
+	public ManagenewsPages entersearchtextarea()
 	{
-		searchtextarea.sendKeys("supermarket news");
+		searchtextarea.sendKeys(constant.SEARCHNEWS);
+		return this;
 	}
-	public void clicktextareasearchbutton() 
+	public ManagenewsPages clicktextareasearchbutton() 
 	{
 		textareasearchbutton.click();
+		return this;
 	}
-
+	
 }

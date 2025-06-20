@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Multibrowser Testing]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Test1(failed)">
+    <parameter name="browsers" value="chrome"/>
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="verifyuserloginwithinvalidusername"/>
+          <include name="closeBrowser"/>
+          <include name="verifyuserloginwithinvalidpassword"/>
+          <include name="veriyUserLoginWithValidCredentials"/>
+          <include name="intializeBrowser"/>
+          <include name="verifyuserloginwithinvalidcredential"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test thread-count="5" parallel="tests" name="Test2(failed)">
+    <parameter name="browsers" value="edge"/>
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="veriyUserLoginWithValidCredentials"/>
+          <include name="intializeBrowser"/>
+          <include name="verifyuserloginwithinvalidcredential"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Multibrowser Testing] -->
