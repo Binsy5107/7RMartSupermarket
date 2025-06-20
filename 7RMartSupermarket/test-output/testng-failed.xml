@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testScript.CategoryTest">
+      <class name="testScript.LoginTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="verifyabletocreatenewcategory"/>
           <include name="intializeBrowser"/>
+          <include name="verifyuserloginwithinvalidcredential" invocation-numbers="1"/>
         </methods>
-      </class> <!-- testScript.CategoryTest -->
+      </class> <!-- testScript.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

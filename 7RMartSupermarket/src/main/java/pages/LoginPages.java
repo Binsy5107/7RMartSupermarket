@@ -1,10 +1,13 @@
-
 package pages;
+
+import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPages {
 
@@ -20,8 +23,6 @@ public class LoginPages {
 	@FindBy(xpath = "//button[@type='submit']")private WebElement  submitbutton;
 	@FindBy(xpath = "//p[text()='Dashboard']")private WebElement dashboard;
 	
-	
-	
 	public LoginPages enterusernameonusernamefield(String username)
 	{
 		usernamefield.sendKeys(username);
@@ -34,8 +35,14 @@ public class LoginPages {
 	}
 	public HomePage clicksubmitbutton()
 	{
-		submitbutton.click();
-		return new HomePage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Wait until the submit button is clickable
+	    wait.until(ExpectedConditions.elementToBeClickable(submitbutton)).click();
+
+	    return new HomePage(driver);
+		//submitbutton.click();
+		//return new HomePage(driver);
 	}
 	public String dashboardDispalyed()
 	{
@@ -45,5 +52,4 @@ public class LoginPages {
 	public String signInPageDisplayed() {
 		return submitbutton.getText();
 	}
-
 }

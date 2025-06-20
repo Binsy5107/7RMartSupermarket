@@ -13,7 +13,6 @@ import pages.LoginPages;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base  {
-	
 	@Test(description = "verify user is able to login with valid credentails",priority  = 1,groups = { "smoke" })
 	public void veriyUserLoginWithValidCredentials() throws IOException
 	{
@@ -39,7 +38,6 @@ public class LoginTest extends Base  {
 		
 				
 	}
-	
 	@Test(description = "verifying user is not able to login valid username and invalid password", priority  = 2,groups = "smoke")
 	public void verifyuserloginwithinvalidusername() throws IOException
 	{
@@ -86,4 +84,6 @@ public class LoginTest extends Base  {
 		// "LoginPage")};
 	}
 
+	
+	
 }
