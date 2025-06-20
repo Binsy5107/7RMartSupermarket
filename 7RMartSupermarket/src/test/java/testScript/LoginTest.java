@@ -74,6 +74,7 @@ public class LoginTest extends Base  {
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
 		Assert.assertEquals(actual, expected, "User was able to login with invalid credentials");
+		
 	}
 
 	@DataProvider(name = "logindata")
@@ -82,6 +83,7 @@ public class LoginTest extends Base  {
 		// or we can pass values through excel file
 		// return new Object[][] { new Object[] { ExcelUtility.getStringData(2, 0,
 		// "LoginPage")};
+		
 	}
 
 	

@@ -2,6 +2,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,14 +36,9 @@ public class LoginPages {
 	}
 	public HomePage clicksubmitbutton()
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	    // Wait until the submit button is clickable
-	    wait.until(ExpectedConditions.elementToBeClickable(submitbutton)).click();
-
-	    return new HomePage(driver);
-		//submitbutton.click();
-		//return new HomePage(driver);
+		
+		submitbutton.click();
+		return new HomePage(driver);
 	}
 	public String dashboardDispalyed()
 	{
@@ -50,6 +46,8 @@ public class LoginPages {
 	return dashboard.getText();
 }
 	public String signInPageDisplayed() {
-		return submitbutton.getText();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebElement freshButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']")));
+	    return freshButton.getText();
 	}
 }
