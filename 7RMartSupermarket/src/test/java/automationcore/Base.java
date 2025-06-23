@@ -17,9 +17,9 @@ import org.testng.annotations.Parameters;
 import utilities.ScreenShotUtility;
 
 public class Base {
-	Properties prop;
-	FileInputStream file;
-	public static WebDriver driver;
+	Properties prop;//For reading config values (not used here, but may be used elsewhere)
+	FileInputStream file;//To load a file stream (not used here).
+	public static WebDriver driver;//Static WebDriver instance used by all tests
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browsers")
@@ -52,10 +52,10 @@ public class Base {
 	}
 	public void driverQuit(ITestResult iTestResult) throws IOException
 	{
-	if(iTestResult.getStatus()==ITestResult.FAILURE)//iTestResult--interface
+	if(iTestResult.getStatus()==ITestResult.FAILURE)//iTestResult--interface . // Check if the test failed
 	{
 	ScreenShotUtility screenShot=new ScreenShotUtility();
-	screenShot.getScreenshot(driver, iTestResult.getName());
+	screenShot.getScreenshot(driver, iTestResult.getName());// Capture screenshot
 	}
 	driver.quit();
 

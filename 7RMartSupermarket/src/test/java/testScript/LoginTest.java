@@ -62,7 +62,7 @@ public class LoginTest extends Base  {
 		loginpage.enterusernameonusernamefield(username).enterpasswordonpasswordfield(password).clicksubmitbutton();
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, "User was able to login with invalid credentials");
+		Assert.assertEquals(actual, expected, Messages.VALIDCREDENTIALERROR);
 	}
 	@Test(description = "verifying user is not able to login with invalid credentials",priority = 4,dataProvider = "logindata")
 	public void verifyuserloginwithinvalidcredential(String username,String password) throws IOException
@@ -73,7 +73,7 @@ public class LoginTest extends Base  {
 		loginpage.enterusernameonusernamefield(username).enterpasswordonpasswordfield(password).clicksubmitbutton();
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, "User was able to login with invalid credentials");
+		Assert.assertEquals(actual, expected, Messages.VALIDCREDENTIALERROR);
 		
 	}
 

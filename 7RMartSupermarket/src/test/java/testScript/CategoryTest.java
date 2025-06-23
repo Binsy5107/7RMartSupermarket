@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.Messages;
 import pages.CategoryPages;
 import pages.LoginPages;
 import utilities.ExcelUtility;
@@ -35,7 +36,7 @@ public class CategoryTest extends Base{
 	    
 	    String actual = category.getCategoryHeaderText();
 	    String expected = "List Categories";
-	    Assert.assertEquals(actual, expected, "Failed to load category page after login.");
+	    Assert.assertEquals(actual, expected,  Messages.CATEGORYPAGELOAD);
 	    
 	    category.clicknewCategoryButton().entercategoryInputField().uploadMainImage().clicksaveButton();
 		

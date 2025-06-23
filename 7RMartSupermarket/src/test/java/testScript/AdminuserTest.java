@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.Messages;
 import pages.AdminuserPages;
 import pages.HomePage;
 import pages.LoginPages;
@@ -35,7 +36,7 @@ public class AdminuserTest extends Base {
 		
 		String actual=adminuserpage.adminuserheadertext();
 		String expected="Admin Users";
-		Assert.assertEquals(actual,expected ,"failed to load admine user page after login");
+		Assert.assertEquals(actual,expected ,Messages.ADMINPAGELAODINERROR);
 		
 		
 		adminuserpage.clicknewbutton();
@@ -59,7 +60,7 @@ public class AdminuserTest extends Base {
 			String actualMessage = alertMsg.getText().trim();
 			String expectedMessage = "User Created Successfully";
 			System.out.println("Success Message: " + actualMessage);
-			Assert.assertTrue(actualMessage.contains(expectedMessage),"Expected success message not found in alert.");
+			Assert.assertTrue(actualMessage.contains(expectedMessage),Messages.ADMINUSERCREATEDSUCCESSALERT);
 		
 		 
 	}
@@ -80,7 +81,7 @@ public class AdminuserTest extends Base {
 		
 		String actual=adminuser.adminuserheadertext();
 		String expected="Admin Users";
-		Assert.assertEquals(actual,expected ,"failed to load admine user page after login");
+		Assert.assertEquals(actual,expected ,Messages.ADMINPAGELAODINERROR);
 	
 		adminuser.clicksearchButton().entersearchusername().selectusertypedropdown().clicksearchbuttoninsearchadminuser();
 		
@@ -92,7 +93,7 @@ public class AdminuserTest extends Base {
 		//adminuser.clicksearchbuttoninsearchadminuser();
 		
 		WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[contains(text(),'admin123User')]")));
-        Assert.assertTrue(result.isDisplayed(), "Search result for 'admin123User' was not displayed.");
+        Assert.assertTrue(result.isDisplayed(), Messages.ADMINUSERSEARCHMEASSAGE);
 	    
 	    
 	}

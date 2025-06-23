@@ -34,3 +34,7 @@ return c.getStringCellValue();
 		}
 
 }
+
+//c.getNumericCellValue()--This reads the numeric value from the Excel cell.It returns a double.
+//(int) c.getNumericCellValue()This casts the double to int.It removes the decimal part (not rounded, just truncated).
+//String.valueOf(value)This converts the int to a String.
