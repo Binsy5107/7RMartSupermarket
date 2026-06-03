@@ -13,9 +13,9 @@ import automationcore.Base;
 import utilities.ExtentReportUtility;
 
 public class listener extends Base implements ITestListener{
-	ExtentTest test;
-	ExtentReports extent=ExtentReportUtility.createExtentReports();
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	ExtentTest test;//Holds the current test log.
+	ExtentReports extent=ExtentReportUtility.createExtentReports();//Initializes the main report using your utility (ExtentReportUtility).
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();//important for parallel test execution so that logs don’t mix up.
 
 	public void onTestStart(ITestResult result) {
 

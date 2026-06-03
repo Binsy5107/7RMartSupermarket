@@ -64,6 +64,7 @@ public class HomePage {
 			adminusersmoreinfo.click();
 			return new AdminuserPages(driver);
 		}
+		
 
 		// chaining of managecategorymodule
 		public CategoryPages clickOnManageCategoryTab() {

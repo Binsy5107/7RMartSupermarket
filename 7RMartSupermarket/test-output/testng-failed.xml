@@ -10,8 +10,9 @@
       <class name="testScript.LoginTest">
         <methods>
           <include name="closeBrowser"/>
+          <include name="verifyuserloginwithinvalidpassword"/>
           <include name="intializeBrowser"/>
-          <include name="verifyuserloginwithinvalidcredential" invocation-numbers="0 1"/>
+          <include name="verifyuserloginwithinvalidcredential"/>
         </methods>
       </class> <!-- testScript.LoginTest -->
     </classes>

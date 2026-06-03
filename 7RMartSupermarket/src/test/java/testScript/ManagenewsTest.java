@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constants.Messages;
 import pages.HomePage;
 import pages.LoginPages;
 import pages.ManagenewsPages;
@@ -38,7 +39,7 @@ public class ManagenewsTest extends Base {
 		    
 		    String actual = managenewspage.getManageNewsHeaderText();
 		    String expected = "Manage News";
-		    Assert.assertEquals(actual, expected, "Failed to load Manage News page after login.");
+		    Assert.assertEquals(actual, expected, Messages.MANAGENEWSPAGELOAD);
 		    
 		managenewspage.clicknewbutton().enternewtextarea().clicksavebutton();
 		
@@ -70,7 +71,7 @@ public class ManagenewsTest extends Base {
 	    
 	    String actual = managenewspage.getManageNewsHeaderText();
 	    String expected = "Manage News";
-	    Assert.assertEquals(actual, expected, "Failed to load Manage News page after login.");
+	    Assert.assertEquals(actual, expected, Messages.SEARCHMANAGENEWSPAGE);
 	    
 	    managenewspage.clicksearchbutton().entersearchtextarea().clicktextareasearchbutton();
 	    

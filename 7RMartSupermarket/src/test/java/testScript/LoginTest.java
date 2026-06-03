@@ -27,14 +27,13 @@ public class LoginTest extends Base  {
 		//boolean isDashboardDisplayed = logninPage.dashboardDisplayed();
 		//Assert.assertTrue(isDashboardDisplayed,"User was unable to login with valid credentials");
 		
-		
-		//boolean isDashboarddisplayed=loginpage.dashboardDispalyed();
+		//boolean isDashboarddisplaye0d=loginpage.dashboardDispalyed();
 		//Assert.assertFalse(isDashboarddisplayed, "user was unable to login with credentials");
 		
 		
 				String actual = loginpage.dashboardDispalyed();
 				String expected = "Dashboard";
-				Assert.assertEquals(actual, expected,"User was unable to login with valid credentials");
+				Assert.assertEquals(actual, expected,Messages.VALIDCREDENTIALERROR);
 		
 				
 	}
@@ -49,7 +48,7 @@ public class LoginTest extends Base  {
 		loginpage.enterusernameonusernamefield(username).enterpasswordonpasswordfield(password).clicksubmitbutton();
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, Messages.VALIDCREDENTIALERROR);
+		Assert.assertEquals(actual, expected, Messages.INVALIDUSERNAMEERROR);
 		
 		
 	}
@@ -62,7 +61,7 @@ public class LoginTest extends Base  {
 		loginpage.enterusernameonusernamefield(username).enterpasswordonpasswordfield(password).clicksubmitbutton();
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, Messages.VALIDCREDENTIALERROR);
+		Assert.assertEquals(actual, expected, Messages.INVALIDPASSWORDERROR);
 	}
 	@Test(description = "verifying user is not able to login with invalid credentials",priority = 4,dataProvider = "logindata")
 	public void verifyuserloginwithinvalidcredential(String username,String password) throws IOException
@@ -73,7 +72,7 @@ public class LoginTest extends Base  {
 		loginpage.enterusernameonusernamefield(username).enterpasswordonpasswordfield(password).clicksubmitbutton();
 		String actual = loginpage.signInPageDisplayed();
 		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, Messages.VALIDCREDENTIALERROR);
+		Assert.assertEquals(actual, expected, Messages.INVALIDCREDENTIALERROR);
 		
 	}
 
@@ -81,10 +80,9 @@ public class LoginTest extends Base  {
 	public Object[][] getDataFromDataProvider() {
 		return new Object[][] { new Object[] { "Test1", "Test2" }, new Object[] { "Test3", "Test4" } };
 		// or we can pass values through excel file
-		// return new Object[][] { new Object[] { ExcelUtility.getStringData(2, 0,
-		// "LoginPage")};
+		// return new Object[][] { new Object[] { ExcelUtility.getStringData(2, 0,"LoginPage")};
 		
-	}
+	} 
 
 	
 	
