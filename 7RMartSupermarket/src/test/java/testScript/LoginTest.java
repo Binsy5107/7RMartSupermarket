@@ -78,7 +78,9 @@ public class LoginTest extends Base  {
 
 	@DataProvider(name = "logindata")
 	public Object[][] getDataFromDataProvider() {
-		return new Object[][] { new Object[] { "Test1", "Test2" }, new Object[] { "Test3", "Test4" } };
+		return new Object[][] {
+			new Object[] { "Test1", "Test2" },
+			new Object[] { "Test3", "Test4" } };
 		// or we can pass values through excel file
 		// return new Object[][] { new Object[] { ExcelUtility.getStringData(2, 0,"LoginPage")};
 		
